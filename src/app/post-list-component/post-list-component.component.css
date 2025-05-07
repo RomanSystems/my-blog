@@ -1,0 +1,51 @@
+.tarjeta {
+  background-color: white;
+  padding: 2rem;
+}
+
+.tarjeta-cabeza {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.aside-izq-imagen img {
+  height: 300px;
+}
+
+.comentarios {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mi-foto {
+  display: flex;
+  justify-content: center;
+}
+
+.comentarios img {
+  width: 30%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.comentario-x {
+  background-color: #e8e3db;
+  border-radius: 0 1rem 1rem 1rem;
+}
+
+.comentario-x p {
+  padding: 0 1rem;
+}
+
+.tu-comentario{
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.caja-comentario{
+  width: 100%;
+}
