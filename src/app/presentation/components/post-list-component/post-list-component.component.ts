@@ -11,6 +11,7 @@ import {PostModel} from '../../../core/models/post.model';
 import {PostRepository} from '../../../data/repository/post.repository';
 import {PostService} from '../../../core/services/post.service';
 import {FormPostComponent} from '../form-post/form-post.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-list-component',
@@ -69,5 +70,11 @@ export class PostListComponentComponent implements OnInit {
       this.postService.removePostFromList(data.url);
       this.refreshData();
     }
+  }
+
+  private router = inject(Router);
+
+  goToDetail(url: string) {
+    this.router.navigate(['/detail', url]);
   }
 }

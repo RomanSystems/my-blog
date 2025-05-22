@@ -11,7 +11,9 @@
 
 <div class="lista-tarjetas">
   @for (item of postList; track item.url) {
-    <app-post-card [item]="item" (onDeletePost)="onDeletePost($event)" (onEditPost)="onEditPost($event)"></app-post-card>
+    <app-post-card [item]="item"
+                   (click)="goToDetail(item.url)"
+                   (onDeletePost)="onDeletePost($event)" (onEditPost)="onEditPost($event)"></app-post-card>
   }
   <h1> Comentarios </h1>
   <div class="comentarios">
