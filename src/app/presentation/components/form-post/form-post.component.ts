@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {PostModel} from '../../../core/models/post.model';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -31,12 +31,12 @@ export class FormPostComponent implements OnChanges{
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       source: this.fb.group({
-        id: [''],
-        name: ['']
+        id: ['', [Validators.required, Validators.minLength(3)]],
+        name: ['', [Validators.required, Validators.maxLength(50)]]
       }),
-      author: [''],
-      title: [''],
-      description: [''],
+      author: ['', Validators.required],
+      title: ['', [Validators.required, Validators.minLength(5)]],
+      description: ['', [Validators.required, Validators.maxLength(200)]],
       url: [''],
       urlToImage: [''],
       publishedAt: [''],
@@ -51,7 +51,11 @@ export class FormPostComponent implements OnChanges{
   }
 
   onSubmit() {
-    this.submitArticle.emit(this.form.value);
+    if (this.form.valid) {
+      this.submitArticle.emit(this.form.value);
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 
   cancel(){
