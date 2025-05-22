@@ -1,0 +1,40 @@
+<div class="titulo">
+  <h1>Blog de Noticias</h1>
+</div>
+<button mat-mini-fab aria-label="" (click)="showCreateCom()">
+  <mat-icon fontIcon="add"></mat-icon>
+</button>
+
+@if (showCreate()) {
+  <app-form-post (submitArticle)="onArticleSubmitted($event)" (cancelArticle)="cancelArticle()"></app-form-post>
+}
+
+<div class="lista-tarjetas">
+  @for (item of postList; track item.url) {
+    <app-post-card [item]="item" (onDeletePost)="onDeletePost($event)" (onEditPost)="onEditPost($event)"></app-post-card>
+  }
+  <h1> Comentarios </h1>
+  <div class="comentarios">
+    <div class="mi-foto">
+      <img src="https://lh3.googleusercontent.com/a/ACg8ocKV1EEQBp…9FIbZ6qmrmByx1dnZizV1Az-uxX0775BX-=s96-c-rg-br100"
+           alt="">
+    </div>
+    <div class="comentario-x">
+      <p>Un comentario de producto, también conocido como review o reseña, es una evaluación escrita por un consumidor
+        sobre un producto o servicio. Estos comentarios ofrecen información valiosa sobre las experiencias de otros
+        compradores, ayudando a otros potenciales compradores a tomar decisiones informadas. </p>
+    </div>
+  </div>
+  <div class="tu-comentario">
+    <mat-form-field appearance="outline" class="caja-comentario">
+      <mat-label>Publicar mi comentario</mat-label>
+      <input matInput placeholder="Mi comentario..." class="caja-comentario">
+      <!--<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+      <!--<mat-hint>Hint</mat-hint>-->
+    </mat-form-field>
+    <button mat-fab aria-label="Example icon button with a delete icon">
+      <mat-icon>send</mat-icon>
+    </button>
+
+  </div>
+</div>

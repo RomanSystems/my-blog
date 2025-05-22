@@ -1,0 +1,40 @@
+<mat-card class="tarjeta">
+  <div class="tarjeta-cabeza">
+    <div class="aside-izq-imagen">
+      <img src="{{ item.urlToImage }}">
+    </div>
+    <div class="aside-derecho">
+      <div class="aside-titulo">
+        <h1>{{ item.title }}</h1>
+      </div>
+      <div class="aside-texto">
+        <h2>
+          {{ item.description }}
+        </h2>
+        <h1>
+          {{ item.publishedAt|date }}
+        </h1>
+        <div>
+          Autor: {{ item.author }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-card-content class="tarjeta-contenido">
+    <div class="tarjeta-descripcion-principal">
+      <div class="contenido-descricpion">
+      </div>
+      <p>{{ item.content }}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="tarjeta-pie">
+    <div class="tarjeta-pie-botones">
+      <button mat-mini-fab aria-label="" >
+        <mat-icon aria-hidden="false" fontIcon="edit" (click)="editPost(item)"></mat-icon>
+      </button>
+      <button mat-mini-fab aria-label="" (click)="deletePost(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-footer>
+</mat-card>

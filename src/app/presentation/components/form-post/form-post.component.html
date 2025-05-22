@@ -1,0 +1,55 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="source">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>ID Fuente</mat-label>
+        <input matInput formControlName="id">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre Fuente</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Autor</mat-label>
+      <input matInput formControlName="author">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>URL</mat-label>
+      <input matInput type="url" formControlName="url">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Imagen (URL)</mat-label>
+      <input matInput type="url" formControlName="urlToImage">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Publicado en</mat-label>
+      <input matInput type="datetime-local" formControlName="publishedAt">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contenido</mat-label>
+      <textarea matInput formControlName="content"></textarea>
+    </mat-form-field>
+
+    <div class="buttons-card">
+      <button mat-raised-button color="primary"(click)="cancel()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit">Publicar</button>
+    </div>
+  </form>
+</mat-card>
