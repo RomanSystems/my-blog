@@ -1,13 +1,21 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {PostModel} from '../../../core/models/post.model';
 import {PostService} from '../../../core/services/post.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
 import {PostCardComponent} from '../post-card/post-card.component';
+import {MatAnchor} from '@angular/material/button';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-post-detail',
   imports: [
-    PostCardComponent
+    PostCardComponent,
+    MatAnchor,
+    RouterLinkActive,
+    RouterLink,
+    MatAnchor,
+    MatIcon,
+    RouterLinkActive
   ],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.css'

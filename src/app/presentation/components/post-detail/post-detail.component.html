@@ -1,2 +1,6 @@
-<app-post-card
-  [item]="item"></app-post-card>
+<a mat-raised-button color="accent" [routerLink]="['/']"
+   routerLinkActive="router-link-active" class="buttons-card">
+  <mat-icon>arrow_back</mat-icon>
+  Ir a
+  principal</a>
+<app-post-card [item]="item"></app-post-card>

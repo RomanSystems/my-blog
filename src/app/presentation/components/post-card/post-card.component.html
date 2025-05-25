@@ -30,9 +30,9 @@
   <mat-card-footer class="tarjeta-pie">
     <div class="tarjeta-pie-botones">
       <button mat-mini-fab aria-label="" >
-        <mat-icon aria-hidden="false" fontIcon="edit" (click)="editPost(item)"></mat-icon>
+        <mat-icon aria-hidden="false" fontIcon="edit" (click)="editPost(item);$event.stopPropagation()"></mat-icon>
       </button>
-      <button mat-mini-fab aria-label="" (click)="deletePost(item)">
+      <button mat-mini-fab aria-label="" (click)="deletePost(item);$event.stopPropagation()">
         <mat-icon>delete</mat-icon>
       </button>
     </div>
